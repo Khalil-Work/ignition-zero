@@ -29,9 +29,13 @@
 namespace ignition_zero {
 
 bool inputs_valid(const Params& p) {
-    return p.A > 0.0 && p.Ea > 0.0 && p.R > 0.0 && p.q >= 0.0 && p.cp > 0.0 &&
-           p.T0 > 0.0 && p.Y0 >= 0.0 && p.Y0 <= 1.0 && p.dt > 0.0 &&
-           p.n_steps >= 0;
+    const bool finite = std::isfinite(p.A) && std::isfinite(p.Ea) &&
+                        std::isfinite(p.R) && std::isfinite(p.q) &&
+                        std::isfinite(p.cp) && std::isfinite(p.T0) &&
+                        std::isfinite(p.Y0) && std::isfinite(p.dt);
+    return finite && p.A > 0.0 && p.Ea > 0.0 && p.R > 0.0 && p.q >= 0.0 &&
+           p.cp > 0.0 && p.T0 > 0.0 && p.Y0 >= 0.0 && p.Y0 <= 1.0 &&
+           p.dt > 0.0 && p.n_steps >= 0;
 }
 
 double arrhenius(double T, const Params& p) {
@@ -46,39 +50,78 @@ static void rhs(double Y, double T, const Params& p, double isothermal_T,
     dT = isothermal ? 0.0 : (p.q / p.cp) * k * Y;
 }
 
+// Domain check for ANY state (final or intermediate): finite, physical.
 static int check_state(double Y, double T) {
-    if (!(Y == Y) || !(T == T)) return 3;    // NaN
+    if (!std::isfinite(Y) || !std::isfinite(T)) return 3;
     if (Y < 0.0 || T <= 0.0) return 2;
     return 0;
 }
 
 // Physical monotonicity of this model: dY/dt <= 0 always (Y >= 0, k > 0),
-// and dT/dt >= 0 in the adiabatic exothermic mode (q >= 0). A step whose
-// result violates these left the numerical domain even if it stays
-// formally positive - RK4 stage garbage must not be accepted.
-static bool step_physical(double Y, double T, double Yn, double Tn) {
-    return Yn <= Y + 1e-14 && Tn >= T - 1e-9;
+// and dT/dt >= 0 in the adiabatic exothermic mode (q >= 0). Applied to
+// every INTERMEDIATE stage as well as the final result: RK4 stage garbage
+// (fuel increasing, temperature dropping) is rejected, never clipped.
+static bool stage_physical(double Y, double T, double Y_stage, double T_stage,
+                           bool isothermal) {
+    if (Y_stage > Y + 1e-14) return false;
+    if (!isothermal && T_stage < T - 1e-9) return false;
+    return true;
+}
+
+// Evaluates one RK4 step for (Y, T); returns 0 when every intermediate
+// stage and the final state are finite, physical, and monotone, else the
+// error code. Outputs Yn/Tn only when accepted (caller checks rc).
+static int rk4_step(double Y, double T, const Params& p, double isothermal_T,
+                    bool isothermal, double dt, double& Yn, double& Tn) {
+    double k1Y, k1T, k2Y, k2T, k3Y, k3T, k4Y, k4T;
+    rhs(Y, T, p, isothermal_T, isothermal, k1Y, k1T);
+    double Ys = Y + 0.5 * dt * k1Y;
+    double Ts = T + 0.5 * dt * k1T;
+    int e = check_state(Ys, Ts);
+    if (e || !stage_physical(Y, T, Ys, Ts, isothermal)) return e ? e : 2;
+    rhs(Ys, Ts, p, isothermal_T, isothermal, k2Y, k2T);
+    Ys = Y + 0.5 * dt * k2Y;
+    Ts = T + 0.5 * dt * k2T;
+    e = check_state(Ys, Ts);
+    if (e || !stage_physical(Y, T, Ys, Ts, isothermal)) return e ? e : 2;
+    rhs(Ys, Ts, p, isothermal_T, isothermal, k3Y, k3T);
+    Ys = Y + dt * k3Y;
+    Ts = T + dt * k3T;
+    e = check_state(Ys, Ts);
+    if (e || !stage_physical(Y, T, Ys, Ts, isothermal)) return e ? e : 2;
+    rhs(Ys, Ts, p, isothermal_T, isothermal, k4Y, k4T);
+    Yn = Y + (dt / 6.0) * (k1Y + 2.0 * k2Y + 2.0 * k3Y + k4Y);
+    Tn = T + (dt / 6.0) * (k1T + 2.0 * k2T + 2.0 * k3T + k4T);
+    e = check_state(Yn, Tn);
+    if (e || !stage_physical(Y, T, Yn, Tn, isothermal)) return e ? e : 2;
+    return 0;
+}
+
+// Output-buffer contract: either all pointers are null (no history), or
+// len must be >= n_steps; otherwise the requested integration cannot be
+// recorded and error 4 (buffer too small) is returned without integrating.
+static int buffers_ok(const double* t_out, const double* Y_out,
+                      const double* T_out, int len, int n_steps) {
+    const bool any = t_out != nullptr || Y_out != nullptr || T_out != nullptr;
+    if (!any) return 0;
+    return len >= n_steps ? 0 : 4;
 }
 
 int integrate_adiabatic(const Params& p, double* t_out, double* Y_out,
                         double* T_out, int len) {
     if (!inputs_valid(p)) return 1;
+    int bc = buffers_ok(t_out, Y_out, T_out, len, p.n_steps);
+    if (bc) return bc;
     double Y = p.Y0, T = p.T0;
-    for (int i = 0; i < p.n_steps && i < len; ++i) {
-        double k1Y, k1T, k2Y, k2T, k3Y, k3T, k4Y, k4T;
-        rhs(Y, T, p, 0.0, false, k1Y, k1T);
-        rhs(Y + 0.5 * p.dt * k1Y, T + 0.5 * p.dt * k1T, p, 0.0, false, k2Y, k2T);
-        rhs(Y + 0.5 * p.dt * k2Y, T + 0.5 * p.dt * k2T, p, 0.0, false, k3Y, k3T);
-        rhs(Y + p.dt * k3Y, T + p.dt * k3T, p, 0.0, false, k4Y, k4T);
-        double Yn = Y + (p.dt / 6.0) * (k1Y + 2.0 * k2Y + 2.0 * k3Y + k4Y);
-        double Tn = T + (p.dt / 6.0) * (k1T + 2.0 * k2T + 2.0 * k3T + k4T);
-        int err = check_state(Yn, Tn);
-        if (err || !step_physical(Y, T, Yn, Tn)) {
+    for (int i = 0; i < p.n_steps; ++i) {
+        double Yn, Tn;
+        int err = rk4_step(Y, T, p, 0.0, false, p.dt, Yn, Tn);
+        if (err) {
             std::fprintf(stderr,
                          "ignition_zero: RK4 step left the physical domain "
                          "(Y=%g, T=%g) at step %d; reduce dt\n",
                          Yn, Tn, i);
-            return err ? err : 2;
+            return err;
         }
         Y = Yn;
         T = Tn;
@@ -92,19 +135,18 @@ int integrate_adiabatic(const Params& p, double* t_out, double* Y_out,
 int integrate_isothermal(const Params& p, double T_fixed, double* t_out,
                          double* Y_out, int len) {
     if (!inputs_valid(p)) return 1;
-    if (!(T_fixed > 0.0)) return 1;
+    if (!std::isfinite(T_fixed) || T_fixed <= 0.0) return 1;
+    int bc = buffers_ok(t_out, Y_out, nullptr, len, p.n_steps);
+    if (bc) return bc;
     double Y = p.Y0;
-    for (int i = 0; i < p.n_steps && i < len; ++i) {
-        double k1Y, k1T, k2Y, k2T, k3Y, k2bT, k4Y, k4T;
-        rhs(Y, T_fixed, p, T_fixed, true, k1Y, k1T);
-        rhs(Y + 0.5 * p.dt * k1Y, T_fixed, p, T_fixed, true, k2Y, k2T);
-        rhs(Y + 0.5 * p.dt * k2Y, T_fixed, p, T_fixed, true, k3Y, k2bT);
-        rhs(Y + p.dt * k3Y, T_fixed, p, T_fixed, true, k4Y, k4T);
-        double Yn = Y + (p.dt / 6.0) * (k1Y + 2.0 * k2Y + 2.0 * k3Y + k4Y);
-        int err = check_state(Yn, T_fixed);
+    for (int i = 0; i < p.n_steps; ++i) {
+        double Yn, Tn;
+        int err = rk4_step(Y, T_fixed, p, T_fixed, true, p.dt, Yn, Tn);
         if (err) {
-            std::fprintf(stderr, "ignition_zero: isothermal stage failed at "
-                                 "step %d (Y=%g)\n", i, Yn);
+            std::fprintf(stderr,
+                         "ignition_zero: isothermal step left the physical "
+                         "domain (Y=%g) at step %d; dt*k is too large\n",
+                         Yn, i);
             return err;
         }
         Y = Yn;
@@ -118,45 +160,39 @@ double energy_invariant(const Params& p, double Y, double T) {
     return p.cp * T + p.q * Y;
 }
 
+// Positivity/monotonicity retry with step halving (NOT adaptive error
+// control: no truncation-error estimate exists here). Contract: exactly
+// n_steps ACCEPTED steps are taken while advancing to the recorded actual
+// times; the physical horizon reached is therefore >= n_steps * dt / 2^60
+// and the per-step recorded times in t_out are the ACTUAL times - use
+// them, not (i+1)*dt, for every comparison and plot.
 int integrate_quench_safe(const Params& p, double* t_out, double* Y_out,
                           double* T_out, int len) {
-    // Adaptive halving wrapper: if a full RK4 step leaves the domain, the
-    // step is halved (down to a floor) instead of aborting. Reports the
-    // final step used through the return value (0 on success).
     if (!inputs_valid(p)) return 1;
+    int bc = buffers_ok(t_out, Y_out, T_out, len, p.n_steps);
+    if (bc) return bc;
     double Y = p.Y0, T = p.T0, t = 0.0;
     double dt = p.dt;
-    int i = 0;
-    while (i < p.n_steps) {
+    for (int i = 0; i < p.n_steps; ++i) {
         double step = dt;
         double Yn = 0.0, Tn = 0.0;
         bool ok = false;
         for (int attempt = 0; attempt < 60; ++attempt) {
-            double k1Y, k1T, k2Y, k2T, k3Y, k3T, k4Y, k4T;
-            rhs(Y, T, p, 0.0, false, k1Y, k1T);
-            rhs(Y + 0.5 * step * k1Y, T + 0.5 * step * k1T, p, 0.0, false, k2Y, k2T);
-            rhs(Y + 0.5 * step * k2Y, T + 0.5 * step * k2T, p, 0.0, false, k3Y, k3T);
-            rhs(Y + step * k3Y, T + step * k3T, p, 0.0, false, k4Y, k4T);
-            Yn = Y + (step / 6.0) * (k1Y + 2.0 * k2Y + 2.0 * k3Y + k4Y);
-            Tn = T + (step / 6.0) * (k1T + 2.0 * k2T + 2.0 * k3T + k4T);
-            if (check_state(Yn, Tn) == 0 && step_physical(Y, T, Yn, Tn)) {
-                ok = true;
-                break;
-            }
+            int err = rk4_step(Y, T, p, 0.0, false, step, Yn, Tn);
+            if (err == 0) { ok = true; break; }
             step *= 0.5;
         }
         if (!ok) {
-            std::fprintf(stderr, "ignition_zero: adaptive step fell below "
-                                 "the floor at t=%g\n", t);
+            std::fprintf(stderr, "ignition_zero: retry step fell below the "
+                                 "floor at t=%g\n", t);
             return 2;
         }
         Y = Yn;
         T = Tn;
         t += step;
-        if (t_out && i < len) t_out[i] = t;
-        if (Y_out && i < len) Y_out[i] = Y;
-        if (T_out && i < len) T_out[i] = T;
-        ++i;
+        if (t_out) t_out[i] = t;
+        if (Y_out) Y_out[i] = Y;
+        if (T_out) T_out[i] = T;
     }
     return 0;
 }

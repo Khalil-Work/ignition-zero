@@ -1,0 +1,27 @@
+{
+  "runtime": {
+    "python": "3.13.5",
+    "build": "CMake + CTest (Release), MSVC 19.44 toolchain",
+    "system": "Windows-11-10.0.26200-SP0"
+  },
+  "case": {
+    "A_1_s": 1000000.0,
+    "Ea_J_per_mol": 80000.0,
+    "q_J_per_kg": 2000000.0,
+    "cp_J_per_kgK": 1200.0,
+    "T0_K": 1100.0,
+    "Y0": 0.08,
+    "dt_s": 1e-05,
+    "steps": 12000
+  },
+  "results": {
+    "T_final_K": 1233.333333333,
+    "adiabatic_limit_K": 1233.3333333333333,
+    "Y_final": 1.20410601495e-22,
+    "energy_audit_max_imbalance_J_per_kg": 6.038462743163109e-07
+  },
+  "animation": {
+    "file": "ignition_evolution.gif",
+    "frames": 41
+  }
+}

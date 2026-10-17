@@ -1,6 +1,7 @@
 // Demo driver: runs the adiabatic ignition case and writes CSV history for
 // plotting. Output: stdout summary + build/ignition_history.csv and
 // build/energy_audit.csv.
+#define _CRT_SECURE_NO_WARNINGS 1
 #include <cmath>
 #include <cstdio>
 
