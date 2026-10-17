@@ -128,6 +128,7 @@ int main() {
             delete[] Y;
         }
         double order = std::log2(errs[0] / errs[1]);
+        // Halving dt divides the asymptotic RK4 error by ~2^4 = 16.
         check(order > 3.5, "RK4 order ~4 on isothermal benchmark");
     }
 

@@ -61,7 +61,7 @@ the C++ output.
 ```
 src/ignition_zero.{hpp,cpp}   # model + integrators (the whole physics)
 src/ignition_demo.cpp         # CSV-writing demo driver
-tests/test_ignition.cpp       # 10 verification groups (CTest gate)
+tests/test_ignition.cpp       # 12 verification groups (CTest gate)
 CMakeLists.txt                # portable build (CMake + CTest)
 examples/run_verification.py  # build, run, figures, GIF
 docs/ model.md  api.md  verification.md  results/
@@ -92,7 +92,7 @@ output), `energy_audit.csv`, `run_summary.json`; cover
 
 ## ✅ Verification
 
-Eight test groups (see [docs/verification.md](docs/verification.md)):
+Twelve test groups (see [docs/verification.md](docs/verification.md)):
 exact isothermal benchmark, measured RK4 order, roundoff energy invariant,
 exact adiabatic limit, Arrhenius self-check, input rejection, stiff
 quench-safe completion with invariants, and the released-vs-sensible

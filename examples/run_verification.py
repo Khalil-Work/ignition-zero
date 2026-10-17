@@ -43,13 +43,38 @@ plt.rcParams.update(
     }
 )
 
-CMAKE = (r"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools"
-         r"\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe")
-CTEST = CMAKE.replace("cmake.exe", "ctest.exe")
+CMAKE = None  # resolved portably at first use via shutil.which("cmake")
+CTEST = None
+
+
+def _find_cmake():
+    """Locate cmake/ctest portably: PATH first, known fallbacks second."""
+    global CMAKE, CTEST
+    import shutil
+
+    found = shutil.which("cmake")
+    if not found:
+        fallback = (r"C:\Program Files (x86)\Microsoft Visual Studio\2022"
+                    r"\BuildTools\Common7\IDE\CommonExtensions\Microsoft"
+                    r"\CMake\CMake\bin\cmake.exe")
+        if pathlib.Path(fallback).exists():
+            found = fallback
+    if not found:
+        raise RuntimeError("cmake not found on PATH or at the documented "
+                           "fallback; install CMake to regenerate results")
+    CMAKE = found
+    ctest = shutil.which("ctest")
+    if not ctest:
+        ctest = found.replace("cmake.exe", "ctest.exe")
+    CTEST = ctest
+
+
 BUILD_DIR = "build-cmake"
 
 
 def build_and_run():
+    if CMAKE is None:
+        _find_cmake()
     build = ROOT / BUILD_DIR
     subprocess.run([CMAKE, "-S", str(ROOT), "-B", str(build)], check=True,
                    capture_output=True)
@@ -65,8 +90,11 @@ def build_and_run():
     (hist_dir / "build").mkdir(exist_ok=True)
     subprocess.run([str(demo)], check=True, cwd=str(hist_dir))
     out = hist_dir / "build" / "ignition_history.csv"
-    data = np.genfromtxt(out, delimiter=",", names=True)
-    return data
+    # Commit the raw C++ history alongside the derived results.
+    raw = np.genfromtxt(out, delimiter=",", names=True)
+    (RESULTS / "ignition_history.csv").write_text(
+        out.read_text(encoding="utf-8"), encoding="utf-8")
+    return raw
 
 
 def make_cover(data):

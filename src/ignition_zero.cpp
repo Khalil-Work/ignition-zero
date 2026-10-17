@@ -70,25 +70,30 @@ static bool stage_physical(double Y, double T, double Y_stage, double T_stage,
 
 // Evaluates one RK4 step for (Y, T); returns 0 when every intermediate
 // stage and the final state are finite, physical, and monotone, else the
-// error code. Outputs Yn/Tn only when accepted (caller checks rc).
+// error code. On rejection, Yn/Tn are left holding the last PROBED
+// (rejected) stage values for diagnostics - the caller may print them but
+// must never use them as an accepted state.
 static int rk4_step(double Y, double T, const Params& p, double isothermal_T,
                     bool isothermal, double dt, double& Yn, double& Tn) {
+    // Initialize outputs to the current state: never read unset memory.
+    Yn = Y;
+    Tn = T;
     double k1Y, k1T, k2Y, k2T, k3Y, k3T, k4Y, k4T;
     rhs(Y, T, p, isothermal_T, isothermal, k1Y, k1T);
     double Ys = Y + 0.5 * dt * k1Y;
     double Ts = T + 0.5 * dt * k1T;
     int e = check_state(Ys, Ts);
-    if (e || !stage_physical(Y, T, Ys, Ts, isothermal)) return e ? e : 2;
+    if (e || !stage_physical(Y, T, Ys, Ts, isothermal)) { Yn = Ys; Tn = Ts; return e ? e : 2; }
     rhs(Ys, Ts, p, isothermal_T, isothermal, k2Y, k2T);
     Ys = Y + 0.5 * dt * k2Y;
     Ts = T + 0.5 * dt * k2T;
     e = check_state(Ys, Ts);
-    if (e || !stage_physical(Y, T, Ys, Ts, isothermal)) return e ? e : 2;
+    if (e || !stage_physical(Y, T, Ys, Ts, isothermal)) { Yn = Ys; Tn = Ts; return e ? e : 2; }
     rhs(Ys, Ts, p, isothermal_T, isothermal, k3Y, k3T);
     Ys = Y + dt * k3Y;
     Ts = T + dt * k3T;
     e = check_state(Ys, Ts);
-    if (e || !stage_physical(Y, T, Ys, Ts, isothermal)) return e ? e : 2;
+    if (e || !stage_physical(Y, T, Ys, Ts, isothermal)) { Yn = Ys; Tn = Ts; return e ? e : 2; }
     rhs(Ys, Ts, p, isothermal_T, isothermal, k4Y, k4T);
     Yn = Y + (dt / 6.0) * (k1Y + 2.0 * k2Y + 2.0 * k3Y + k4Y);
     Tn = T + (dt / 6.0) * (k1T + 2.0 * k2T + 2.0 * k3T + k4T);
