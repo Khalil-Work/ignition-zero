@@ -16,6 +16,7 @@
 #include <cmath>
 #include <cstdio>
 #include <cstdlib>
+#include <limits>
 
 #include "../src/ignition_zero.hpp"
 
@@ -127,6 +128,7 @@ int main() {
             delete[] Y;
         }
         double order = std::log2(errs[0] / errs[1]);
+        // Halving dt divides the asymptotic RK4 error by ~2^4 = 16.
         check(order > 3.5, "RK4 order ~4 on isothermal benchmark");
     }
 
@@ -136,10 +138,48 @@ int main() {
         bad.Ea = -1.0;
         check(ignition_zero::integrate_adiabatic(bad, nullptr, nullptr, nullptr, 0) == 1,
               "invalid input rejected");
+        Params inf_A = p;
+        inf_A.A = std::numeric_limits<double>::infinity();
+        check(ignition_zero::integrate_adiabatic(inf_A, nullptr, nullptr, nullptr, 0) == 1,
+              "infinite parameter rejected");
         Params nan_R = p;
         nan_R.R = std::nan("");
         check(ignition_zero::integrate_adiabatic(nan_R, nullptr, nullptr, nullptr, 0) == 1,
               "non-finite parameter rejected");
+        check(ignition_zero::integrate_isothermal(p, std::numeric_limits<double>::infinity(),
+                                                   nullptr, nullptr, 0) == 1,
+              "infinite isothermal temperature rejected");
+    }
+
+    // --- 6b. Oversized-step contract: isothermal dt*k = 10 must FAIL ------
+    {
+        // For y' = -k y with dt*k = 10, RK4 returns Y_new ~ +291*Y_old:
+        // positive but GROWING fuel. The monotonicity stage checks must
+        // reject it in the isothermal mode too (error 2), never return
+        // success.
+        Params over = p;
+        double k0 = ignition_zero::arrhenius(p.T0, p);
+        over.dt = 10.0 / k0;
+        over.n_steps = 3;
+        double t3[3], Y3[3];
+        int rc = ignition_zero::integrate_isothermal(over, p.T0, t3, Y3, 3);
+        check(rc == 2, "isothermal oversized step rejected (no silent growth)");
+    }
+
+    // --- 6c. Output-buffer contract ---------------------------------------
+    {
+        double t_short[10], Y_short[10], T_short[10];
+        Params short_run = p;
+        short_run.n_steps = 50;
+        check(ignition_zero::integrate_adiabatic(short_run, t_short, Y_short,
+                                                 T_short, 10) == 4,
+              "short buffer rejected instead of truncating");
+        check(ignition_zero::integrate_adiabatic(short_run, nullptr, nullptr,
+                                                 nullptr, 0) == 0,
+              "null buffers (final-state-only usage) accepted");
+        check(ignition_zero::integrate_quench_safe(short_run, t_short, Y_short,
+                                                   T_short, 10) == 4,
+              "quench-safe short buffer rejected too");
     }
 
     // --- 7. Quench-safe stiff case + invariant --------------------------

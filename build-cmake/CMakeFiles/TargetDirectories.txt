@@ -1,0 +1,6 @@
+C:/GitHub-Codex/original-projects/ignition-zero/build-cmake/CMakeFiles/ignition_zero_src.dir
+C:/GitHub-Codex/original-projects/ignition-zero/build-cmake/CMakeFiles/test_ignition.dir
+C:/GitHub-Codex/original-projects/ignition-zero/build-cmake/CMakeFiles/ignition_demo.dir
+C:/GitHub-Codex/original-projects/ignition-zero/build-cmake/CMakeFiles/RUN_TESTS.dir
+C:/GitHub-Codex/original-projects/ignition-zero/build-cmake/CMakeFiles/ALL_BUILD.dir
+C:/GitHub-Codex/original-projects/ignition-zero/build-cmake/CMakeFiles/ZERO_CHECK.dir

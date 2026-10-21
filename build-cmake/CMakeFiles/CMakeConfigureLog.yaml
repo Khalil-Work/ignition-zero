@@ -1,0 +1,773 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Windows - 10.0.26200 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.14.40+3e7442088 for .NET Framework
+      Build started 10/18/2026 6:21:36 AM.
+      
+      Project "C:\\GitHub-Codex\\original-projects\\ignition-zero\\build-cmake\\CMakeFiles\\3.31.6-msvc6\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdCXX.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> C:\\GitHub-Codex\\original-projects\\ignition-zero\\build-cmake\\CMakeFiles\\3.31.6-msvc6\\CompilerIdCXX\\CompilerIdCXX.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      Done Building Project "C:\\GitHub-Codex\\original-projects\\ignition-zero\\build-cmake\\CMakeFiles\\3.31.6-msvc6\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:03.30
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        C:/GitHub-Codex/original-projects/ignition-zero/build-cmake/CMakeFiles/3.31.6-msvc6/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "C:/GitHub-Codex/original-projects/ignition-zero/build-cmake/CMakeFiles/CMakeScratch/TryCompile-ng3ktv"
+      binary: "C:/GitHub-Codex/original-projects/ignition-zero/build-cmake/CMakeFiles/CMakeScratch/TryCompile-ng3ktv"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/GitHub-Codex/original-projects/ignition-zero/build-cmake/CMakeFiles/CMakeScratch/TryCompile-ng3ktv'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_529ff.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.40+3e7442088 for .NET Framework
+        Build started 10/18/2026 6:21:42 AM.
+        
+        Project "C:\\GitHub-Codex\\original-projects\\ignition-zero\\build-cmake\\CMakeFiles\\CMakeScratch\\TryCompile-ng3ktv\\cmTC_529ff.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_529ff.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\GitHub-Codex\\original-projects\\ignition-zero\\build-cmake\\CMakeFiles\\CMakeScratch\\TryCompile-ng3ktv\\Debug\\".
+          Creating directory "cmTC_529ff.dir\\Debug\\cmTC_529ff.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_529ff.dir\\Debug\\cmTC_529ff.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_529ff.dir\\Debug\\cmTC_529ff.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_529ff.dir\\Debug\\\\" /Fd"cmTC_529ff.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35222 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_529ff.dir\\Debug\\\\" /Fd"cmTC_529ff.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
+          CMakeCXXCompilerABI.cpp
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\GitHub-Codex\\original-projects\\ignition-zero\\build-cmake\\CMakeFiles\\CMakeScratch\\TryCompile-ng3ktv\\Debug\\cmTC_529ff.exe" /INCREMENTAL /ILK:"cmTC_529ff.dir\\Debug\\cmTC_529ff.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/GitHub-Codex/original-projects/ignition-zero/build-cmake/CMakeFiles/CMakeScratch/TryCompile-ng3ktv/Debug/cmTC_529ff.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/GitHub-Codex/original-projects/ignition-zero/build-cmake/CMakeFiles/CMakeScratch/TryCompile-ng3ktv/Debug/cmTC_529ff.lib" /MACHINE:X64  /machine:x64 cmTC_529ff.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_529ff.vcxproj -> C:\\GitHub-Codex\\original-projects\\ignition-zero\\build-cmake\\CMakeFiles\\CMakeScratch\\TryCompile-ng3ktv\\Debug\\cmTC_529ff.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_529ff.dir\\Debug\\cmTC_529ff.tlog\\unsuccessfulbuild".
+          Touching "cmTC_529ff.dir\\Debug\\cmTC_529ff.tlog\\cmTC_529ff.lastbuildstate".
+        Done Building Project "C:\\GitHub-Codex\\original-projects\\ignition-zero\\build-cmake\\CMakeFiles\\CMakeScratch\\TryCompile-ng3ktv\\cmTC_529ff.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:01.48
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'CXX': C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the CXX compiler's linker: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.44.35222.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeDetermineSystem.cmake:218 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Windows - 10.0.26200 - AMD64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:501 (find_file)"
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:538 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/"
+    found: "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Programs\\WinLibs\\GCC-16.2.0\\mingw64\\bin"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Programs\\GitCLI\\cmd"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
+        - "C:\\Program Files\\ParaView 5.13.250418\\bin"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Microsoft MPI\\Bin\\"
+        - "C:\\Python314\\Scripts\\"
+        - "C:\\Python314\\"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\Tecplot\\Tecplot Chorus 2021 R2\\bin"
+        - "C:\\Program Files\\Tecplot\\Tecplot 360 EX 2021 R2\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\MATLAB\\R2024b\\runtime\\win64"
+        - "C:\\Program Files\\MATLAB\\R2024b\\bin"
+        - "X:\\Program\\New folder\\Avogadro\\bin"
+        - "C:\\Program Files\\Siemens\\NX2312\\CAPITALINTEGRATION\\capitalnxremote\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
+        - "X:\\Program\\nodeJS\\"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Program Files (x86)\\Microsoft SQL Server\\160\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\160\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\160\\DTS\\Binn\\"
+        - "C:\\Program Files\\AskLink"
+        - "%SystemRoot%\\system32"
+        - "%SystemRoot%"
+        - "%SystemRoot%\\System32\\Wbem"
+        - "%SYSTEMROOT%\\System32\\WindowsPowerShell\\v1.0\\"
+        - "%SYSTEMROOT%\\System32\\OpenSSH\\"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Programs\\Python\\Python310\\"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Muse Hub\\lib"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\GitHubDesktop\\bin"
+        - "X:\\Program\\MiKTeX\\miktex\\bin\\x64\\"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Programs\\Antigravity\\bin"
+        - "X:\\Program\\Microsoft VS Code\\bin"
+        - "C:\\Users\\KHALIL\\AppData\\Roaming\\npm"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\PowerToys\\DSCModules\\"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Programs\\Antigravity IDE\\bin"
+        - "X:\\Program\\ZCode\\resources\\tools\\ripgrep"
+        - "X:\\Program\\ZCode\\resources\\tools\\ugrep"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/ignition_zero"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: /DWIN32;/D_WINDOWS;/GR;/EHsc
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.14.40+3e7442088 for .NET Framework
+      Build started 10/18/2026 6:41:49 AM.
+      
+      Project "C:\\GitHub-Codex\\original-projects\\ignition-zero\\build-cmake\\CMakeFiles\\4.4.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdCXX.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> C:\\GitHub-Codex\\original-projects\\ignition-zero\\build-cmake\\CMakeFiles\\4.4.3\\CompilerIdCXX\\CompilerIdCXX.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      Done Building Project "C:\\GitHub-Codex\\original-projects\\ignition-zero\\build-cmake\\CMakeFiles\\4.4.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:01.76
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        C:/GitHub-Codex/original-projects/ignition-zero/build-cmake/CMakeFiles/4.4.3/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:64 (__resolve_tool_path)"
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:102 (__resolve_linker_path)"
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/bin/"
+      - "C:/Users/KHALIL/AppData/Local/Programs/GitCLI/cmd/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
+      - "C:/Program Files/ParaView 5.13.250418/bin/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Microsoft MPI/Bin/"
+      - "C:/Python314/Scripts/"
+      - "C:/Python314/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files/Tecplot/Tecplot Chorus 2021 R2/bin/"
+      - "C:/Program Files/Tecplot/Tecplot 360 EX 2021 R2/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/MATLAB/R2024b/runtime/win64/"
+      - "C:/Program Files/MATLAB/R2024b/bin/"
+      - "X:/Program/New folder/Avogadro/bin/"
+      - "C:/Program Files/Siemens/NX2312/CAPITALINTEGRATION/capitalnxremote/"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/"
+      - "X:/Program/nodeJS/"
+      - "C:/ProgramData/chocolatey/bin/"
+      - "C:/Program Files (x86)/Microsoft SQL Server/160/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/160/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/160/DTS/Binn/"
+      - "C:/Program Files/AskLink/"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SystemRoot%/system32/"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SystemRoot%/"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SystemRoot%/System32/Wbem/"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SYSTEMROOT%/System32/WindowsPowerShell/v1.0/"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SYSTEMROOT%/System32/OpenSSH/"
+      - "C:/Users/KHALIL/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "C:/Users/KHALIL/AppData/Local/Programs/Python/Python310/"
+      - "C:/Users/KHALIL/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/KHALIL/AppData/Local/Muse Hub/lib/"
+      - "C:/Users/KHALIL/AppData/Local/GitHubDesktop/bin/"
+      - "X:/Program/MiKTeX/miktex/bin/x64/"
+      - "C:/Users/KHALIL/AppData/Local/Programs/antigravity/bin/"
+      - "X:/Program/Microsoft VS Code/bin/"
+      - "C:/Users/KHALIL/AppData/Roaming/npm/"
+      - "C:/Users/KHALIL/AppData/Local/Programs/MiKTeX/miktex/bin/x64/"
+      - "C:/Users/KHALIL/AppData/Local/PowerToys/DSCModules/"
+      - "C:/Users/KHALIL/AppData/Local/Programs/Antigravity IDE/bin/"
+      - "X:/Program/ZCode/resources/tools/ripgrep/"
+      - "X:/Program/ZCode/resources/tools/ugrep/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.com"
+    found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Programs\\WinLibs\\GCC-16.2.0\\mingw64\\bin"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Programs\\GitCLI\\cmd"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
+        - "C:\\Program Files\\ParaView 5.13.250418\\bin"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Microsoft MPI\\Bin\\"
+        - "C:\\Python314\\Scripts\\"
+        - "C:\\Python314\\"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\Tecplot\\Tecplot Chorus 2021 R2\\bin"
+        - "C:\\Program Files\\Tecplot\\Tecplot 360 EX 2021 R2\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\MATLAB\\R2024b\\runtime\\win64"
+        - "C:\\Program Files\\MATLAB\\R2024b\\bin"
+        - "X:\\Program\\New folder\\Avogadro\\bin"
+        - "C:\\Program Files\\Siemens\\NX2312\\CAPITALINTEGRATION\\capitalnxremote\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
+        - "X:\\Program\\nodeJS\\"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Program Files (x86)\\Microsoft SQL Server\\160\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\160\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\160\\DTS\\Binn\\"
+        - "C:\\Program Files\\AskLink"
+        - "%SystemRoot%\\system32"
+        - "%SystemRoot%"
+        - "%SystemRoot%\\System32\\Wbem"
+        - "%SYSTEMROOT%\\System32\\WindowsPowerShell\\v1.0\\"
+        - "%SYSTEMROOT%\\System32\\OpenSSH\\"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Programs\\Python\\Python310\\"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Muse Hub\\lib"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\GitHubDesktop\\bin"
+        - "X:\\Program\\MiKTeX\\miktex\\bin\\x64\\"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Programs\\Antigravity\\bin"
+        - "X:\\Program\\Microsoft VS Code\\bin"
+        - "C:\\Users\\KHALIL\\AppData\\Roaming\\npm"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\PowerToys\\DSCModules\\"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Programs\\Antigravity IDE\\bin"
+        - "X:\\Program\\ZCode\\resources\\tools\\ripgrep"
+        - "X:\\Program\\ZCode\\resources\\tools\\ugrep"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/ignition_zero"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:64 (__resolve_tool_path)"
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:103 (__resolve_linker_path)"
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lld-link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/bin/"
+      - "C:/Users/KHALIL/AppData/Local/Programs/GitCLI/cmd/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
+      - "C:/Program Files/ParaView 5.13.250418/bin/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Microsoft MPI/Bin/"
+      - "C:/Python314/Scripts/"
+      - "C:/Python314/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files/Tecplot/Tecplot Chorus 2021 R2/bin/"
+      - "C:/Program Files/Tecplot/Tecplot 360 EX 2021 R2/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/MATLAB/R2024b/runtime/win64/"
+      - "C:/Program Files/MATLAB/R2024b/bin/"
+      - "X:/Program/New folder/Avogadro/bin/"
+      - "C:/Program Files/Siemens/NX2312/CAPITALINTEGRATION/capitalnxremote/"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/"
+      - "X:/Program/nodeJS/"
+      - "C:/ProgramData/chocolatey/bin/"
+      - "C:/Program Files (x86)/Microsoft SQL Server/160/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/160/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/160/DTS/Binn/"
+      - "C:/Program Files/AskLink/"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SystemRoot%/system32/"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SystemRoot%/"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SystemRoot%/System32/Wbem/"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SYSTEMROOT%/System32/WindowsPowerShell/v1.0/"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SYSTEMROOT%/System32/OpenSSH/"
+      - "C:/Users/KHALIL/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "C:/Users/KHALIL/AppData/Local/Programs/Python/Python310/"
+      - "C:/Users/KHALIL/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/KHALIL/AppData/Local/Muse Hub/lib/"
+      - "C:/Users/KHALIL/AppData/Local/GitHubDesktop/bin/"
+      - "X:/Program/MiKTeX/miktex/bin/x64/"
+      - "C:/Users/KHALIL/AppData/Local/Programs/antigravity/bin/"
+      - "X:/Program/Microsoft VS Code/bin/"
+      - "C:/Users/KHALIL/AppData/Roaming/npm/"
+      - "C:/Users/KHALIL/AppData/Local/Programs/MiKTeX/miktex/bin/x64/"
+      - "C:/Users/KHALIL/AppData/Local/PowerToys/DSCModules/"
+      - "C:/Users/KHALIL/AppData/Local/Programs/Antigravity IDE/bin/"
+      - "X:/Program/ZCode/resources/tools/ripgrep/"
+      - "X:/Program/ZCode/resources/tools/ugrep/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link"
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/bin/lld-link.com"
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/bin/lld-link.exe"
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/bin/lld-link"
+      - "C:/Users/KHALIL/AppData/Local/Programs/GitCLI/cmd/lld-link.com"
+      - "C:/Users/KHALIL/AppData/Local/Programs/GitCLI/cmd/lld-link.exe"
+      - "C:/Users/KHALIL/AppData/Local/Programs/GitCLI/cmd/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link"
+      - "C:/Program Files/ParaView 5.13.250418/bin/lld-link.com"
+      - "C:/Program Files/ParaView 5.13.250418/bin/lld-link.exe"
+      - "C:/Program Files/ParaView 5.13.250418/bin/lld-link"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link"
+      - "C:/Program Files/Microsoft MPI/Bin/lld-link.com"
+      - "C:/Program Files/Microsoft MPI/Bin/lld-link.exe"
+      - "C:/Program Files/Microsoft MPI/Bin/lld-link"
+      - "C:/Python314/Scripts/lld-link.com"
+      - "C:/Python314/Scripts/lld-link.exe"
+      - "C:/Python314/Scripts/lld-link"
+      - "C:/Python314/lld-link.com"
+      - "C:/Python314/lld-link.exe"
+      - "C:/Python314/lld-link"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link"
+      - "C:/Program Files/Tecplot/Tecplot Chorus 2021 R2/bin/lld-link.com"
+      - "C:/Program Files/Tecplot/Tecplot Chorus 2021 R2/bin/lld-link.exe"
+      - "C:/Program Files/Tecplot/Tecplot Chorus 2021 R2/bin/lld-link"
+      - "C:/Program Files/Tecplot/Tecplot 360 EX 2021 R2/bin/lld-link.com"
+      - "C:/Program Files/Tecplot/Tecplot 360 EX 2021 R2/bin/lld-link.exe"
+      - "C:/Program Files/Tecplot/Tecplot 360 EX 2021 R2/bin/lld-link"
+      - "C:/Windows/System32/lld-link.com"
+      - "C:/Windows/System32/lld-link.exe"
+      - "C:/Windows/System32/lld-link"
+      - "C:/Windows/lld-link.com"
+      - "C:/Windows/lld-link.exe"
+      - "C:/Windows/lld-link"
+      - "C:/Windows/System32/wbem/lld-link.com"
+      - "C:/Windows/System32/wbem/lld-link.exe"
+      - "C:/Windows/System32/wbem/lld-link"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link"
+      - "C:/Windows/System32/OpenSSH/lld-link.com"
+      - "C:/Windows/System32/OpenSSH/lld-link.exe"
+      - "C:/Windows/System32/OpenSSH/lld-link"
+      - "C:/Program Files/dotnet/lld-link.com"
+      - "C:/Program Files/dotnet/lld-link.exe"
+      - "C:/Program Files/dotnet/lld-link"
+      - "C:/Program Files/MATLAB/R2024b/runtime/win64/lld-link.com"
+      - "C:/Program Files/MATLAB/R2024b/runtime/win64/lld-link.exe"
+      - "C:/Program Files/MATLAB/R2024b/runtime/win64/lld-link"
+      - "C:/Program Files/MATLAB/R2024b/bin/lld-link.com"
+      - "C:/Program Files/MATLAB/R2024b/bin/lld-link.exe"
+      - "C:/Program Files/MATLAB/R2024b/bin/lld-link"
+      - "X:/Program/New folder/Avogadro/bin/lld-link.com"
+      - "X:/Program/New folder/Avogadro/bin/lld-link.exe"
+      - "X:/Program/New folder/Avogadro/bin/lld-link"
+      - "C:/Program Files/Siemens/NX2312/CAPITALINTEGRATION/capitalnxremote/lld-link.com"
+      - "C:/Program Files/Siemens/NX2312/CAPITALINTEGRATION/capitalnxremote/lld-link.exe"
+      - "C:/Program Files/Siemens/NX2312/CAPITALINTEGRATION/capitalnxremote/lld-link"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/lld-link.com"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/lld-link.exe"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/lld-link"
+      - "X:/Program/nodeJS/lld-link.com"
+      - "X:/Program/nodeJS/lld-link.exe"
+      - "X:/Program/nodeJS/lld-link"
+      - "C:/ProgramData/chocolatey/bin/lld-link.com"
+      - "C:/ProgramData/chocolatey/bin/lld-link.exe"
+      - "C:/ProgramData/chocolatey/bin/lld-link"
+      - "C:/Program Files (x86)/Microsoft SQL Server/160/Tools/Binn/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft SQL Server/160/Tools/Binn/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft SQL Server/160/Tools/Binn/lld-link"
+      - "C:/Program Files/Microsoft SQL Server/160/Tools/Binn/lld-link.com"
+      - "C:/Program Files/Microsoft SQL Server/160/Tools/Binn/lld-link.exe"
+      - "C:/Program Files/Microsoft SQL Server/160/Tools/Binn/lld-link"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/lld-link.com"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/lld-link.exe"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/lld-link"
+      - "C:/Program Files/Microsoft SQL Server/160/DTS/Binn/lld-link.com"
+      - "C:/Program Files/Microsoft SQL Server/160/DTS/Binn/lld-link.exe"
+      - "C:/Program Files/Microsoft SQL Server/160/DTS/Binn/lld-link"
+      - "C:/Program Files/AskLink/lld-link.com"
+      - "C:/Program Files/AskLink/lld-link.exe"
+      - "C:/Program Files/AskLink/lld-link"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SystemRoot%/system32/lld-link.com"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SystemRoot%/system32/lld-link.exe"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SystemRoot%/system32/lld-link"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SystemRoot%/lld-link.com"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SystemRoot%/lld-link.exe"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SystemRoot%/lld-link"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SystemRoot%/System32/Wbem/lld-link.com"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SystemRoot%/System32/Wbem/lld-link.exe"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SystemRoot%/System32/Wbem/lld-link"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SYSTEMROOT%/System32/WindowsPowerShell/v1.0/lld-link.com"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SYSTEMROOT%/System32/WindowsPowerShell/v1.0/lld-link.exe"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SYSTEMROOT%/System32/WindowsPowerShell/v1.0/lld-link"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SYSTEMROOT%/System32/OpenSSH/lld-link.com"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SYSTEMROOT%/System32/OpenSSH/lld-link.exe"
+      - "C:/GitHub-Codex/original-projects/ignition-zero/%SYSTEMROOT%/System32/OpenSSH/lld-link"
+      - "C:/Users/KHALIL/AppData/Local/Programs/Python/Python310/Scripts/lld-link.com"
+      - "C:/Users/KHALIL/AppData/Local/Programs/Python/Python310/Scripts/lld-link.exe"
+      - "C:/Users/KHALIL/AppData/Local/Programs/Python/Python310/Scripts/lld-link"
+      - "C:/Users/KHALIL/AppData/Local/Programs/Python/Python310/lld-link.com"
+      - "C:/Users/KHALIL/AppData/Local/Programs/Python/Python310/lld-link.exe"
+      - "C:/Users/KHALIL/AppData/Local/Programs/Python/Python310/lld-link"
+      - "C:/Users/KHALIL/AppData/Local/Microsoft/WindowsApps/lld-link.com"
+      - "C:/Users/KHALIL/AppData/Local/Microsoft/WindowsApps/lld-link.exe"
+      - "C:/Users/KHALIL/AppData/Local/Microsoft/WindowsApps/lld-link"
+      - "C:/Users/KHALIL/AppData/Local/Muse Hub/lib/lld-link.com"
+      - "C:/Users/KHALIL/AppData/Local/Muse Hub/lib/lld-link.exe"
+      - "C:/Users/KHALIL/AppData/Local/Muse Hub/lib/lld-link"
+      - "C:/Users/KHALIL/AppData/Local/GitHubDesktop/bin/lld-link.com"
+      - "C:/Users/KHALIL/AppData/Local/GitHubDesktop/bin/lld-link.exe"
+      - "C:/Users/KHALIL/AppData/Local/GitHubDesktop/bin/lld-link"
+      - "X:/Program/MiKTeX/miktex/bin/x64/lld-link.com"
+      - "X:/Program/MiKTeX/miktex/bin/x64/lld-link.exe"
+      - "X:/Program/MiKTeX/miktex/bin/x64/lld-link"
+      - "C:/Users/KHALIL/AppData/Local/Programs/antigravity/bin/lld-link.com"
+      - "C:/Users/KHALIL/AppData/Local/Programs/antigravity/bin/lld-link.exe"
+      - "C:/Users/KHALIL/AppData/Local/Programs/antigravity/bin/lld-link"
+      - "X:/Program/Microsoft VS Code/bin/lld-link.com"
+      - "X:/Program/Microsoft VS Code/bin/lld-link.exe"
+      - "X:/Program/Microsoft VS Code/bin/lld-link"
+      - "C:/Users/KHALIL/AppData/Roaming/npm/lld-link.com"
+      - "C:/Users/KHALIL/AppData/Roaming/npm/lld-link.exe"
+      - "C:/Users/KHALIL/AppData/Roaming/npm/lld-link"
+      - "C:/Users/KHALIL/AppData/Local/Programs/MiKTeX/miktex/bin/x64/lld-link.com"
+      - "C:/Users/KHALIL/AppData/Local/Programs/MiKTeX/miktex/bin/x64/lld-link.exe"
+      - "C:/Users/KHALIL/AppData/Local/Programs/MiKTeX/miktex/bin/x64/lld-link"
+      - "C:/Users/KHALIL/AppData/Local/PowerToys/DSCModules/lld-link.com"
+      - "C:/Users/KHALIL/AppData/Local/PowerToys/DSCModules/lld-link.exe"
+      - "C:/Users/KHALIL/AppData/Local/PowerToys/DSCModules/lld-link"
+      - "C:/Users/KHALIL/AppData/Local/Programs/Antigravity IDE/bin/lld-link.com"
+      - "C:/Users/KHALIL/AppData/Local/Programs/Antigravity IDE/bin/lld-link.exe"
+      - "C:/Users/KHALIL/AppData/Local/Programs/Antigravity IDE/bin/lld-link"
+      - "X:/Program/ZCode/resources/tools/ripgrep/lld-link.com"
+      - "X:/Program/ZCode/resources/tools/ripgrep/lld-link.exe"
+      - "X:/Program/ZCode/resources/tools/ripgrep/lld-link"
+      - "X:/Program/ZCode/resources/tools/ugrep/lld-link.com"
+      - "X:/Program/ZCode/resources/tools/ugrep/lld-link.exe"
+      - "X:/Program/ZCode/resources/tools/ugrep/lld-link"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Programs\\WinLibs\\GCC-16.2.0\\mingw64\\bin"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Programs\\GitCLI\\cmd"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
+        - "C:\\Program Files\\ParaView 5.13.250418\\bin"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Microsoft MPI\\Bin\\"
+        - "C:\\Python314\\Scripts\\"
+        - "C:\\Python314\\"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\Tecplot\\Tecplot Chorus 2021 R2\\bin"
+        - "C:\\Program Files\\Tecplot\\Tecplot 360 EX 2021 R2\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\MATLAB\\R2024b\\runtime\\win64"
+        - "C:\\Program Files\\MATLAB\\R2024b\\bin"
+        - "X:\\Program\\New folder\\Avogadro\\bin"
+        - "C:\\Program Files\\Siemens\\NX2312\\CAPITALINTEGRATION\\capitalnxremote\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
+        - "X:\\Program\\nodeJS\\"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Program Files (x86)\\Microsoft SQL Server\\160\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\160\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\160\\DTS\\Binn\\"
+        - "C:\\Program Files\\AskLink"
+        - "%SystemRoot%\\system32"
+        - "%SystemRoot%"
+        - "%SystemRoot%\\System32\\Wbem"
+        - "%SYSTEMROOT%\\System32\\WindowsPowerShell\\v1.0\\"
+        - "%SYSTEMROOT%\\System32\\OpenSSH\\"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Programs\\Python\\Python310\\"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Muse Hub\\lib"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\GitHubDesktop\\bin"
+        - "X:\\Program\\MiKTeX\\miktex\\bin\\x64\\"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Programs\\Antigravity\\bin"
+        - "X:\\Program\\Microsoft VS Code\\bin"
+        - "C:\\Users\\KHALIL\\AppData\\Roaming\\npm"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\PowerToys\\DSCModules\\"
+        - "C:\\Users\\KHALIL\\AppData\\Local\\Programs\\Antigravity IDE\\bin"
+        - "X:\\Program\\ZCode\\resources\\tools\\ripgrep"
+        - "X:\\Program\\ZCode\\resources\\tools\\ugrep"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/ignition_zero"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeDetermineCompilerABI.cmake:123 (try_compile)"
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "C:/GitHub-Codex/original-projects/ignition-zero/build-cmake/CMakeFiles/CMakeScratch/TryCompile-toe7m7"
+      binary: "C:/GitHub-Codex/original-projects/ignition-zero/build-cmake/CMakeFiles/CMakeScratch/TryCompile-toe7m7"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: false
+      stdout: |
+        Change Dir: 'C:/GitHub-Codex/original-projects/ignition-zero/build-cmake/CMakeFiles/CMakeScratch/TryCompile-toe7m7'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_1025f.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.40+3e7442088 for .NET Framework
+        Build started 10/18/2026 6:41:52 AM.
+        
+        Project "C:\\GitHub-Codex\\original-projects\\ignition-zero\\build-cmake\\CMakeFiles\\CMakeScratch\\TryCompile-toe7m7\\cmTC_1025f.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\GitHub-Codex\\original-projects\\ignition-zero\\build-cmake\\CMakeFiles\\CMakeScratch\\TryCompile-toe7m7\\Debug\\".
+          Creating directory "cmTC_1025f.dir\\Debug\\cmTC_1025f.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_1025f.dir\\Debug\\cmTC_1025f.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_1025f.dir\\Debug\\cmTC_1025f.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_1025f.dir\\Debug\\\\" /Fd"cmTC_1025f.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\KHALIL\\AppData\\Local\\Programs\\WinLibs\\GCC-16.2.0\\mingw64\\share\\cmake-4.4\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35222 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_1025f.dir\\Debug\\\\" /Fd"cmTC_1025f.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\KHALIL\\AppData\\Local\\Programs\\WinLibs\\GCC-16.2.0\\mingw64\\share\\cmake-4.4\\Modules\\CMakeCXXCompilerABI.cpp"
+          CMakeCXXCompilerABI.cpp
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\GitHub-Codex\\original-projects\\ignition-zero\\build-cmake\\CMakeFiles\\CMakeScratch\\TryCompile-toe7m7\\Debug\\cmTC_1025f.exe" /INCREMENTAL /ILK:"cmTC_1025f.dir\\Debug\\cmTC_1025f.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/GitHub-Codex/original-projects/ignition-zero/build-cmake/CMakeFiles/CMakeScratch/TryCompile-toe7m7/Debug/cmTC_1025f.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/GitHub-Codex/original-projects/ignition-zero/build-cmake/CMakeFiles/CMakeScratch/TryCompile-toe7m7/Debug/cmTC_1025f.lib" /MACHINE:X64  /machine:x64 cmTC_1025f.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_1025f.vcxproj -> C:\\GitHub-Codex\\original-projects\\ignition-zero\\build-cmake\\CMakeFiles\\CMakeScratch\\TryCompile-toe7m7\\Debug\\cmTC_1025f.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_1025f.dir\\Debug\\cmTC_1025f.tlog\\unsuccessfulbuild".
+          Touching "cmTC_1025f.dir\\Debug\\cmTC_1025f.tlog\\cmTC_1025f.lastbuildstate".
+        Done Building Project "C:\\GitHub-Codex\\original-projects\\ignition-zero\\build-cmake\\CMakeFiles\\CMakeScratch\\TryCompile-toe7m7\\cmTC_1025f.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.87
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeDetermineCompilerABI.cmake:291 (message)"
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        link line: [  C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\GitHub-Codex\\original-projects\\ignition-zero\\build-cmake\\CMakeFiles\\CMakeScratch\\TryCompile-toe7m7\\Debug\\cmTC_1025f.exe" /INCREMENTAL /ILK:"cmTC_1025f.dir\\Debug\\cmTC_1025f.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/GitHub-Codex/original-projects/ignition-zero/build-cmake/CMakeFiles/CMakeScratch/TryCompile-toe7m7/Debug/cmTC_1025f.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/GitHub-Codex/original-projects/ignition-zero/build-cmake/CMakeFiles/CMakeScratch/TryCompile-toe7m7/Debug/cmTC_1025f.lib" /MACHINE:X64  /machine:x64 cmTC_1025f.dir\\Debug\\CMakeCXXCompilerABI.obj] ==> linker [C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe]
+        linker tool for 'CXX': C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe 
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/Internal/CMakeDetermineLinkerId.cmake:41 (message)"
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeDetermineCompilerABI.cmake:337 (cmake_determine_linker_id)"
+      - "C:/Users/KHALIL/AppData/Local/Programs/WinLibs/GCC-16.2.0/mingw64/share/cmake-4.4/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the CXX compiler's linker: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.44.35222.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+...

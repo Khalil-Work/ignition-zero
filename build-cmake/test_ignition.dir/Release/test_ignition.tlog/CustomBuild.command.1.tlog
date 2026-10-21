@@ -1,0 +1,10 @@
+^C:\GITHUB-CODEX\ORIGINAL-PROJECTS\IGNITION-ZERO\CMAKELISTS.TXT
+setlocal
+C:\Users\KHALIL\AppData\Local\Programs\WinLibs\GCC-16.2.0\mingw64\bin\cmake.exe -SC:/GitHub-Codex/original-projects/ignition-zero -BC:/GitHub-Codex/original-projects/ignition-zero/build-cmake --check-stamp-file C:/GitHub-Codex/original-projects/ignition-zero/build-cmake/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

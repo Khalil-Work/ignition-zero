@@ -1,0 +1,20 @@
+Start testing: Oct 18 06:41 China Standard Time
+----------------------------------------------------------
+1/1 Testing: ignition_checks
+1/1 Test: ignition_checks
+Command: "C:/GitHub-Codex/original-projects/ignition-zero/build-cmake/Release/test_ignition.exe"
+Directory: C:/GitHub-Codex/original-projects/ignition-zero/build-cmake
+"ignition_checks" start time: Oct 18 06:41 China Standard Time
+Output:
+----------------------------------------------------------
+ignition_zero: isothermal step left the physical domain (Y=-0.32) at step 0; dt*k is too large
+ignition_zero: all checks passed
+<end of output>
+Test time =   0.10 sec
+----------------------------------------------------------
+Test Passed.
+"ignition_checks" end time: Oct 18 06:41 China Standard Time
+"ignition_checks" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 18 06:41 China Standard Time
