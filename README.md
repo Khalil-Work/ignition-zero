@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/banner.svg" alt="Ignition Zero banner: glowing ember ignition kernel with Arrhenius rate on near-black" width="100%">
+<img src="docs/banner.png" alt="Ignition Zero banner: glowing ember ignition kernel with Arrhenius rate on near-black" width="100%">
 
 # 🔥 Ignition Zero
 
@@ -58,7 +58,7 @@ Full derivation and scope: [docs/model.md](docs/model.md).
 
 ```mermaid
 flowchart LR
-    A[fuel Y, temp T] --> B[k = A e^(−Ea/RT)]
+    A[fuel Y, temp T] --> B["k = A e^(−Ea/RT)"]
     B --> C[release: dY/dt = −kY]
     C --> D[heat: dT/dt = q/cp · kY]
     D --> E[T rises]
