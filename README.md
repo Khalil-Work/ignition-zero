@@ -11,12 +11,12 @@ adiabatic coupling — whose energy invariant cₚT + qY is conserved to roundof
 the thermal runaway, verified against the exact isothermal exponential and the exact
 adiabatic limit.**
 
-[![tests](https://github.com/khalil-official/ignition-zero/actions/workflows/ci.yml/badge.svg)](https://github.com/khalil-official/ignition-zero/actions/workflows/ci.yml)
+[![tests](https://github.com/khalil-work/ignition-zero/actions/workflows/ci.yml/badge.svg)](https://github.com/khalil-work/ignition-zero/actions/workflows/ci.yml)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![language](https://img.shields.io/badge/language-C%2B%2B17-blue.svg)](src)
 [![invariant](https://img.shields.io/badge/invariant%20drift-%3C%201e--12-orange.svg)](docs/verification.md)
-[![repo stars](https://img.shields.io/github/stars/khalil-official/ignition-zero?style=flat&color=yellow)](https://github.com/khalil-official/ignition-zero/stargazers)
-[![last commit](https://img.shields.io/github/last-commit/khalil-official/ignition-zero?color=9cf)](https://github.com/khalil-official/ignition-zero/commits)
+[![repo stars](https://img.shields.io/github/stars/khalil-work/ignition-zero?style=flat&color=yellow)](https://github.com/khalil-work/ignition-zero/stargazers)
+[![last commit](https://img.shields.io/github/last-commit/khalil-work/ignition-zero?color=9cf)](https://github.com/khalil-work/ignition-zero/commits)
 
 [Quick start](#-quick-start) · [Method](#-model-method-and-safeguards) · [Animation](#%EF%B8%8F-results-gallery) · [Metrics](#-results-and-metrics) · [References](#-references)
 
