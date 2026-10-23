@@ -18,7 +18,7 @@ adiabatic limit.**
 [![repo stars](https://img.shields.io/github/stars/khalil-work/ignition-zero?style=flat&color=yellow)](https://github.com/khalil-work/ignition-zero/stargazers)
 [![last commit](https://img.shields.io/github/last-commit/khalil-work/ignition-zero?color=9cf)](https://github.com/khalil-work/ignition-zero/commits)
 
-[Quick start](#-quick-start) · [Method](#-model-method-and-safeguards) · [Animation](#%EF%B8%8F-results-gallery) · [Metrics](#-results-and-metrics) · [References](#-references)
+[Homepage](https://khalil-work.github.io) · [Quick start](#-quick-start) · [Method](#-model-method-and-safeguards) · [Animation](#%EF%B8%8F-results-gallery) · [Metrics](#-results-and-metrics) · [References](#-references)
 
 </div>
 
